@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{071E10C7-98A1-E18C-E3D1-1B0603687006}</ProjectGuid>
+    <ProjectGuid>{E3EF6E53-88BE-20EB-65C7-C65330B49779}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,16 +62,16 @@
     <Compile Include="Assets\Flappy Bird Style\Scripts\Bird.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\Columns.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\ColumnsController.cs" />
-    <Compile Include="Assets\Flappy Bird Style\Scripts\GameController.cs" />
-    <Compile Include="Assets\Flappy Bird Style\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Flappy Bird Style\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Flappy Bird Style\Scripts\GUIManager.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\ScrollingObject.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\StartController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/nastya/Desktop/UnityTasks/Flappy Bird/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/nastya/Documents/GitHub/FlappyBird/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/nastya/Desktop/UnityTasks/Flappy Bird/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/nastya/Documents/GitHub/FlappyBird/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

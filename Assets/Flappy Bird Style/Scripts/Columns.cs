@@ -9,22 +9,22 @@ public class Columns : MonoBehaviour
 	void Start () 
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
+        rigidbody.velocity = new Vector2(GameManager.instance.scrollSpeed, 0);
 	}
 		
 	void Update () 
     {
-        if(GameController.instance.gameOver)
+        if(GameManager.instance.gameOver)
         {
             rigidbody.velocity = Vector2.zero;
         }
 	}
 
-	private void OnTriggerExit2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
         if(collision.GetComponent<Bird>())
         {
-            GameController.instance.BirdScored();
+            GameManager.instance.BirdScored();
         }
 	}	
 }

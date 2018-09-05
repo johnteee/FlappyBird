@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour 
 {
-    public float jumpForce;
+    private float jumpForce = 250f;
     private bool isDead = false;
 
     new private Rigidbody2D rigidbody;
     private Animator animator;
+    private Vector3 startPosition;
 
     public AudioClip dieSound;
-
     public AudioClip hitSound;
-
     public AudioClip swooshingSound;
     public AudioClip wingSound;
 
@@ -21,34 +20,31 @@ public class Bird : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
-        Debug.Log(Camera.main.orthographicSize);
+        startPosition = transform.position;
     }
 		
 	void Update () 
     {
-        if(!GameController.instance.pauseGame)
+        if(!GameManager.instance.pauseGame)
         {
             bool tap = false;
             if (Input.GetMouseButtonDown(0)) tap = true;
 
-            if(GameController.instance.startGame == false)
+            //Check if tab was on the button 
+            if(!isDead && tap && CheckBounds())
             {
-                rigidbody.isKinematic = false;
+                Jump();
             }
-            if(!isDead)
-            {
-                if (tap && CheckBounds())
-                {
-                    Jump();
-                }
-            } 
-        }
 
+            if(GameManager.instance.restartGame)
+            {
+                Reset();
+            }
+        }
 	}
 
     private bool CheckBounds()
     {
-        
         if(Camera.main.orthographicSize < transform.position.y + GetComponent<BoxCollider2D>().size.y)
         {
             return false;
@@ -61,6 +57,7 @@ public class Bird : MonoBehaviour
     {
         animator.SetTrigger("Flap");
         SoundManager.instance.PlaySingle(wingSound);
+
         rigidbody.velocity = Vector2.zero;
         rigidbody.AddForce(new Vector2(0, jumpForce));
     }
@@ -68,8 +65,10 @@ public class Bird : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
         isDead = true;
+
         animator.SetTrigger("Die");
-        GameController.instance.BirdDie();
+        GameManager.instance.BirdDie();
+
         if(collision.gameObject.tag == "Columns")
         {
             SoundManager.instance.PlaySingle(hitSound);
@@ -80,4 +79,11 @@ public class Bird : MonoBehaviour
         }
 
 	}
+
+    public void Reset()
+    {
+        isDead = false;
+        transform.position = startPosition;
+    }
+
 }
