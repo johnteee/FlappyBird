@@ -311,8 +311,8 @@
     <Compile Include="Assets\Flappy Bird Style\Scripts\Bird.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\Columns.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\ColumnsController.cs" />
-    <Compile Include="Assets\Flappy Bird Style\Scripts\GameController.cs" />
-    <Compile Include="Assets\Flappy Bird Style\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Flappy Bird Style\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Flappy Bird Style\Scripts\GUIManager.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\ScrollingObject.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Flappy Bird Style\Scripts\StartController.cs" />

@@ -16,10 +16,14 @@ public class Bird : MonoBehaviour
     public AudioClip swooshingSound;
     public AudioClip wingSound;
 
+    public Sprite idleSprite;
+    //new private SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
+
         startPosition = transform.position;
     }
 		
@@ -56,7 +60,8 @@ public class Bird : MonoBehaviour
     private void Jump()
     {
         animator.SetTrigger("Flap");
-        SoundManager.instance.PlaySingle(wingSound);
+        if(SoundManager.instance.canPlayMusic)
+            SoundManager.instance.PlaySingle(wingSound);
 
         rigidbody.velocity = Vector2.zero;
         rigidbody.AddForce(new Vector2(0, jumpForce));
@@ -71,11 +76,11 @@ public class Bird : MonoBehaviour
 
         if(collision.gameObject.tag == "Columns")
         {
-            SoundManager.instance.PlaySingle(hitSound);
+            if (SoundManager.instance.canPlayMusic) SoundManager.instance.PlaySingle(hitSound);
         }
         else if(collision.gameObject.tag == "Ground")
         {
-            SoundManager.instance.PlaySingle(dieSound);
+            if (SoundManager.instance.canPlayMusic) SoundManager.instance.PlaySingle(dieSound);
         }
 
 	}
@@ -84,6 +89,7 @@ public class Bird : MonoBehaviour
     {
         isDead = false;
         transform.position = startPosition;
+        animator.SetTrigger("Idle");
     }
 
 }

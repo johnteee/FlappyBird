@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{E3EF6E53-88BE-20EB-65C7-C65330B49779}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Flappy Bird Style/Scripts/Bird.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Flappy Bird Style/Scripts/SoundManager.cs">
     <Files>
-      <File FileName="Assets/Flappy Bird Style/Scripts/GameManager.cs" Line="6" Column="40" />
+      <File FileName="Assets/Flappy Bird Style/Scripts/GameManager.cs" Line="51" Column="32" />
       <File FileName="Assets/Flappy Bird Style/Scripts/GUIManager.cs" Line="36" Column="43" />
-      <File FileName="Assets/Flappy Bird Style/Scripts/Bird.cs" Line="78" Column="56" />
+      <File FileName="Assets/Flappy Bird Style/Scripts/Bird.cs" Line="95" Column="1" />
+      <File FileName="Assets/Flappy Bird Style/Scripts/SoundManager.cs" Line="10" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Flappy Bird Style" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="Bird.cs" selected="True" />
+                  <Node name="SoundManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

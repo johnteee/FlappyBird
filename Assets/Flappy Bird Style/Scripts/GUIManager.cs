@@ -42,14 +42,14 @@ public class GUIManager : MonoBehaviour
 
 	public void MusicOnPressed()
     {
-        SoundManager.instance.musicSource.Stop();
+        SoundManager.instance.StopPlay();
         musicOffButton.SetActive(true);
         musicOnButton.SetActive(false);
     }
 
     public void MusicOffPressed()
     {
-        SoundManager.instance.musicSource.Play();
+        SoundManager.instance.Play();
         musicOffButton.SetActive(false);
         musicOnButton.SetActive(true);
     }

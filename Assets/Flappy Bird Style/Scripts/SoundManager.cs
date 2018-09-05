@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour {
     public AudioSource musicSource;
     public AudioSource pointSource;
     public static SoundManager instance = null;
+
+    public bool canPlayMusic = true; 
     	
 	void Awake () 
     {
@@ -25,14 +27,28 @@ public class SoundManager : MonoBehaviour {
 
     public void PlaySingle(AudioClip clip)
     {
+        if (!canPlayMusic) return;
         effectSource.clip = clip;
         effectSource.Play();
     }
 
     public void PlayPointSound(AudioClip clip)
     {
+        if (!canPlayMusic) return;
         pointSource.clip = clip;
         pointSource.Play();
+    }
+
+    public void StopPlay()
+    {
+        canPlayMusic = false;
+        gameObject.SetActive(false);
+    }
+
+    public void Play()
+    {
+        canPlayMusic = true;
+        gameObject.SetActive(true);
     }
 	
 }

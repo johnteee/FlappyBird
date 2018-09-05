@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         {
             restartGame = true;
             Restart();
+            if (SoundManager.instance.canPlayMusic) SoundManager.instance.musicSource.Play();
         }
 	}
 
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void BirdDie()
     {
         gameOver = true;
-        SoundManager.instance.musicSource.Stop();
+        if (SoundManager.instance.canPlayMusic) SoundManager.instance.musicSource.Stop();
     }
 
     public void BirdScored()
@@ -71,7 +72,8 @@ public class GameManager : MonoBehaviour
         score++;
         CheckRecord();
         Time.timeScale += 0.05f;
-        SoundManager.instance.PlayPointSound(pointSound);
+        if(SoundManager.instance.canPlayMusic)
+            SoundManager.instance.PlayPointSound(pointSound);
     }
 
     public void CheckRecord()
