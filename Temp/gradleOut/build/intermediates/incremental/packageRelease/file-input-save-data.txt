@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Sep 05 10:51:54 MSK 2018
+#Wed Sep 05 11:25:30 MSK 2018
 60.set=ASSET
 52.set=ANDROID_RESOURCE
 53.base=/Users/nastya/Documents/GitHub/FlappyBird/Temp/gradleOut/build/intermediates/assets/release
