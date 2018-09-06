@@ -10,9 +10,11 @@ public class ScrollingObject : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+       // Debug.Log(GameManager.instance.scrollSpeed);
         rb2d.velocity = new Vector2(GameManager.instance.scrollSpeed, 0);
 
         scrollingLength = GameManager.instance.groundHorizontalLength;
+
     }
 
     void Update()
@@ -20,6 +22,10 @@ public class ScrollingObject : MonoBehaviour
         if (GameManager.instance.gameOver)
         {
             rb2d.velocity = Vector2.zero;
+        }
+        if(GameManager.instance.restartGame)
+        {
+            rb2d.velocity = new Vector2(GameManager.instance.scrollSpeed, 0);
         }
         if (transform.position.x + scrollingLength / 2 + 1f< Camera.main.transform.position.x - Camera.main.orthographicSize - 4f)
         {

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ColumnsController : MonoBehaviour 
 {
-    private static int COLUMNS_DELAY_MIN = 150;
-    private static int COLUMNS_DELAY_MAX = 200;
+    private static int COLUMNS_DELAY_MIN = 100;
+    private static int COLUMNS_DELAY_MAX = 150;
 
     private static float COLUMNS_Y_MIN = -1.5f;
     private static float COLUMNS_Y_MAX = 3.3f;

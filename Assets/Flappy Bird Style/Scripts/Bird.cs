@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour 
 {
-    private float jumpForce = 250f;
+    private float jumpForce = 300f;
     private bool isDead = false;
 
     new private Rigidbody2D rigidbody;

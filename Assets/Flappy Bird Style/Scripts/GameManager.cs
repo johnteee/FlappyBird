@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool pauseGame = false;
     public bool startGame = false;
     public bool restartGame = false;
-    public float scrollSpeed = -1f;
+    public float scrollSpeed = -3f;
     public int score = 0;
     public int record;
 
@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour
     {
         score++;
         CheckRecord();
-        Time.timeScale += 0.05f;
+        scrollSpeed -= 0.05f;
+        //Time.timeScale += 0.05f;
         if(SoundManager.instance.canPlayMusic)
             SoundManager.instance.PlayPointSound(pointSound);
     }
